@@ -1,0 +1,12 @@
+@import "tailwindcss";
+button.install-btn {
+    height: 40px;
+    margin: 20px auto;
+    display: block;
+    background: #902e2e;
+    padding: 7px 14px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px 3px #dabfbf;
+}

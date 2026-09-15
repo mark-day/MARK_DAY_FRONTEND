@@ -1,0 +1,1439 @@
+/* =========================================================
+   ATTENDANCE PAGE
+========================================================= */
+
+.attendance-page {
+  width: 100%;
+  min-width: 0;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.attendance-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.attendance-heading-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.attendance-heading-content h2 {
+  margin: 0;
+  color: #222222;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 590;
+  letter-spacing: -0.6px;
+}
+
+.attendance-heading-content p {
+  margin: 4px 0 0;
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.attendance-back-button {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: 0;
+  border-radius: 17px;
+
+  background: #ffffff;
+  color: #111111;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.10);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.attendance-back-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.attendance-back-button:hover {
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.13);
+}
+
+.attendance-back-button:active {
+  transform: scale(0.97);
+}
+
+.attendance-back-button:focus-visible {
+  outline: 2px solid #222222;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CALENDAR CARD
+========================================================= */
+
+.calendar-card {
+  width: min(720px, 100%);
+  margin: 0 auto 30px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 32px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CALENDAR HEADER
+========================================================= */
+
+.calendar-header {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  border-bottom: 1px solid #e8e8e8;
+
+  box-sizing: border-box;
+}
+
+.calendar-header h3 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 590;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   CALENDAR NAVIGATION
+========================================================= */
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendar-nav-button {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #000000;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 27px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.calendar-nav-button span {
+  display: block;
+
+  line-height: 30px;
+
+  transform: translateY(-1px);
+}
+
+.calendar-nav-button:hover {
+  opacity: 0.88;
+}
+
+.calendar-nav-button:active {
+  transform: scale(0.94);
+}
+
+.calendar-nav-button:focus-visible {
+  outline: 2px solid #222222;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CALENDAR BODY
+========================================================= */
+
+.calendar-body {
+  width: 100%;
+  padding: 0 24px 24px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   REACT-CALENDAR RESET
+========================================================= */
+
+.calendar-body .react-calendar {
+  width: 100%;
+  max-width: none;
+
+  border: 0;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  line-height: 1.125em;
+}
+
+
+/* Remove React Calendar's own navigation */
+.calendar-body .react-calendar__navigation {
+  display: none;
+}
+
+
+/* =========================================================
+   WEEKDAY HEADER
+========================================================= */
+
+.calendar-body .react-calendar__month-view__weekdays {
+  display: grid !important;
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.calendar-body .react-calendar__month-view__weekdays__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 54px;
+
+  padding: 0;
+
+  color: #111111;
+
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.calendar-body
+.react-calendar__month-view__weekdays__weekday
+abbr {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   CALENDAR GRID
+========================================================= */
+
+.calendar-body .react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   DATE TILE
+========================================================= */
+
+.calendar-body .react-calendar__tile {
+  position: relative;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #111111;
+
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1;
+
+  font-weight: 590;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+/* Date number */
+.calendar-body
+.react-calendar__tile abbr {
+  position: relative;
+  z-index: 3;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   REMOVE DEFAULT REACT-CALENDAR STATES
+========================================================= */
+
+.calendar-body
+.react-calendar__tile:enabled:hover {
+  background: transparent;
+}
+
+.calendar-body
+.react-calendar__tile:enabled:focus {
+  background: transparent;
+}
+
+.calendar-body
+.react-calendar__tile:enabled:active {
+  background: transparent;
+}
+
+.calendar-body
+.react-calendar__tile--now {
+  background: transparent;
+}
+
+.calendar-body
+.react-calendar__tile--active {
+  background: transparent;
+  color: inherit;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.calendar-body
+.react-calendar__tile:enabled:hover::before {
+  content: "";
+
+  position: absolute;
+
+  width: 40px;
+  height: 40px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #f4f4f4;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   SELECTED DATE
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-selected::before {
+  content: "";
+
+  position: absolute;
+
+  width: 44px;
+  height: 44px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #111111;
+
+  z-index: 0;
+}
+
+.calendar-body
+.react-calendar__tile.calendar-selected {
+  color: #ffffff;
+}
+
+.calendar-body
+.react-calendar__tile.calendar-selected
+abbr {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   STATUS DOT BASE
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-present::after,
+
+.calendar-body
+.react-calendar__tile.calendar-late::after,
+
+.calendar-body
+.react-calendar__tile.calendar-absent::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: 7px;
+  height: 7px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   PRESENT = GREEN
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-present::after {
+  background: #35a853;
+
+  box-shadow:
+    0 0 0 2px rgba(53, 168, 83, 0.08);
+}
+
+
+/* =========================================================
+   LATE = YELLOW
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-late::after {
+  background: #f2b01e;
+
+  box-shadow:
+    0 0 0 2px rgba(242, 176, 30, 0.08);
+}
+
+
+/* =========================================================
+   ABSENT = RED
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-absent::after {
+  background: #e05252;
+
+  box-shadow:
+    0 0 0 2px rgba(224, 82, 82, 0.08);
+}
+
+
+/* =========================================================
+   SELECTED STATUS DOT
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-selected.calendar-present::after {
+  background: #35a853;
+}
+
+.calendar-body
+.react-calendar__tile.calendar-selected.calendar-late::after {
+  background: #f2b01e;
+}
+
+.calendar-body
+.react-calendar__tile.calendar-selected.calendar-absent::after {
+  background: #e05252;
+}
+
+
+/* =========================================================
+   LEAVE
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-leave {
+  color: #555555;
+}
+
+.calendar-body
+.react-calendar__tile.calendar-leave::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: 7px;
+  height: 7px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #8c8c8c;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   SUNDAY
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-sunday {
+  color: #555555;
+}
+
+
+/* =========================================================
+   HOLIDAY
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-holiday {
+  color: #555555;
+}
+
+.calendar-body
+.react-calendar__tile.calendar-holiday::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: 7px;
+  height: 7px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #777777;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   DISABLED / NEIGHBOR DATES
+========================================================= */
+
+.calendar-body
+.react-calendar__tile.calendar-disabled {
+  color: #bdbdbd;
+  cursor: default;
+}
+
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+.calendar-body
+.react-calendar__tile--now {
+  color: inherit;
+}
+
+
+/* =========================================================
+   SUMMARY SECTION
+========================================================= */
+
+.attendance-summary {
+  width: 100%;
+
+  padding: 38px 50px 30px;
+
+  background: #ffffff;
+
+  border-radius: 40px;
+
+  box-sizing: border-box;
+}
+
+.attendance-summary > h3 {
+  margin: 0 0 34px;
+
+  color: #222222;
+
+  font-size: 28px;
+  line-height: 1.15;
+
+  font-weight: 590;
+
+  letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+========================================================= */
+
+/*
+  IMPORTANT:
+  Desktop is intentionally 5 columns.
+*/
+.summary-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 10px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+========================================================= */
+
+.summary-card {
+  min-width: 0;
+  min-height: 102px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  padding: 18px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #f2f2f2;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.10);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SUMMARY ICON
+========================================================= */
+
+.summary-icon-wrapper {
+  width: 56px;
+  height: 56px;
+
+  flex: 0 0 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  box-sizing: border-box;
+}
+
+.summary-icon {
+  width: 28px;
+  height: 28px;
+
+  color: #138b1f;
+}
+
+
+/* =========================================================
+   SUMMARY CONTENT
+========================================================= */
+
+.summary-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.summary-content span {
+  display: block;
+
+  margin: 0;
+
+  color: #1a1a1a;
+
+  font-size: 14px;
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+.summary-content strong {
+  display: block;
+
+  margin: 2px 0 0;
+
+  color: #222222;
+
+  font-size: 28px;
+  line-height: 1.05;
+
+  font-weight: 590;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.attendance-loading {
+  display: block;
+
+  margin-top: 12px;
+
+  color: #777777;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1440px) {
+  .attendance-page {
+    padding: 32px;
+  }
+
+  .attendance-summary {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP / 1280
+========================================================= */
+
+@media (max-width: 1280px) {
+  .attendance-page {
+    padding: 28px;
+  }
+
+  .attendance-heading {
+    margin-bottom: 48px;
+  }
+
+  .calendar-card {
+    width: min(700px, 100%);
+  }
+
+  .attendance-summary {
+    padding: 34px 36px 28px;
+  }
+
+  .summary-card {
+    gap: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .summary-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .summary-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .attendance-page {
+    padding: 24px;
+  }
+
+  .attendance-heading {
+    gap: 22px;
+    margin-bottom: 42px;
+  }
+
+  .attendance-heading-content h2 {
+    font-size: 30px;
+  }
+
+  .calendar-card {
+    width: min(680px, 100%);
+  }
+
+  /*
+    Keep 5 cards when there is enough space.
+    At 1024px the cards remain readable.
+  */
+  .summary-grid {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+  .attendance-summary {
+    padding: 32px 28px 26px;
+  }
+
+  .summary-card {
+    min-height: 96px;
+    gap: 8px;
+    border-radius: 24px;
+  }
+
+  .summary-icon-wrapper {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    border-radius: 13px;
+  }
+
+  .summary-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .summary-content span {
+    font-size: 13px;
+  }
+
+  .summary-content strong {
+    font-size: 25px;
+  }
+}
+
+
+/* =========================================================
+   TABLET 912px
+========================================================= */
+
+@media (max-width: 912px) {
+  .summary-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .summary-card {
+    min-height: 100px;
+  }
+}
+
+
+/* =========================================================
+   TABLET 834px
+========================================================= */
+
+@media (max-width: 834px) {
+  .attendance-page {
+    padding: 22px;
+  }
+
+  .attendance-heading {
+    margin-bottom: 36px;
+  }
+
+  .attendance-heading-content h2 {
+    font-size: 28px;
+  }
+
+  .attendance-heading-content p {
+    font-size: 15px;
+  }
+
+  .calendar-header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .calendar-body {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+  }
+
+  .calendar-body
+  .react-calendar__tile {
+    height: 74px;
+  }
+
+  .attendance-summary {
+    padding: 30px 24px 24px;
+    border-radius: 32px;
+  }
+
+  .attendance-summary > h3 {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+}
+
+
+/* =========================================================
+   TABLET 768px
+========================================================= */
+
+@media (max-width: 768px) {
+  .attendance-page {
+    padding: 20px;
+  }
+
+  .attendance-heading {
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .attendance-back-button {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    border-radius: 15px;
+  }
+
+  .attendance-heading-content h2 {
+    font-size: 27px;
+  }
+
+  .attendance-heading-content p {
+    margin-top: 3px;
+    font-size: 14px;
+  }
+
+  .calendar-card {
+    border-radius: 28px;
+  }
+
+  .calendar-header {
+    min-height: 68px;
+  }
+
+  .calendar-header h3 {
+    font-size: 18px;
+  }
+
+  .calendar-nav-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .calendar-body
+  .react-calendar__month-view__weekdays__weekday {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .calendar-body
+  .react-calendar__tile {
+    height: 68px;
+    font-size: 17px;
+  }
+
+  .attendance-summary {
+    padding: 28px 20px 22px;
+  }
+
+  .summary-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE 600px
+========================================================= */
+
+@media (max-width: 600px) {
+  .attendance-page {
+    padding: 16px;
+  }
+
+  .attendance-heading {
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .attendance-back-button {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    border-radius: 14px;
+  }
+
+  .attendance-back-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .attendance-heading-content {
+    padding-top: 2px;
+  }
+
+  .attendance-heading-content h2 {
+    font-size: 25px;
+    letter-spacing: -0.4px;
+  }
+
+  .attendance-heading-content p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .calendar-card {
+    margin-bottom: 20px;
+    border-radius: 24px;
+  }
+
+  .calendar-header {
+    min-height: 62px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .calendar-header h3 {
+    font-size: 16px;
+  }
+
+  .calendar-nav {
+    gap: 7px;
+  }
+
+  .calendar-nav-button {
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .calendar-body {
+    padding: 0 10px 12px;
+  }
+
+  .calendar-body
+  .react-calendar__month-view__weekdays__weekday {
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .calendar-body
+  .react-calendar__tile {
+    height: 60px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .calendar-body
+  .react-calendar__tile.calendar-selected::before {
+    width: 38px;
+    height: 38px;
+  }
+
+  .calendar-body
+  .react-calendar__tile:enabled:hover::before {
+    width: 36px;
+    height: 36px;
+  }
+
+  .calendar-body
+  .react-calendar__tile.calendar-present::after,
+
+  .calendar-body
+  .react-calendar__tile.calendar-late::after,
+
+  .calendar-body
+  .react-calendar__tile.calendar-absent::after,
+
+  .calendar-body
+  .react-calendar__tile.calendar-leave::after,
+
+  .calendar-body
+  .react-calendar__tile.calendar-holiday::after {
+    width: 6px;
+    height: 6px;
+    bottom: 7px;
+  }
+
+  .attendance-summary {
+    padding: 24px 14px 18px;
+    border-radius: 26px;
+  }
+
+  .attendance-summary > h3 {
+    font-size: 23px;
+    margin-bottom: 22px;
+  }
+
+  .summary-grid {
+    gap: 8px;
+  }
+
+  .summary-card {
+    min-height: 86px;
+    gap: 8px;
+    padding: 12px 10px;
+    border-radius: 20px;
+  }
+
+  .summary-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 12px;
+  }
+
+  .summary-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .summary-content span {
+    font-size: 12px;
+  }
+
+  .summary-content strong {
+    font-size: 23px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE 390px
+========================================================= */
+
+@media (max-width: 390px) {
+  .attendance-page {
+    padding: 12px;
+  }
+
+  .attendance-heading {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .attendance-back-button {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .attendance-heading-content h2 {
+    font-size: 23px;
+  }
+
+  .attendance-heading-content p {
+    font-size: 12px;
+  }
+
+  .calendar-header {
+    min-height: 58px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .calendar-header h3 {
+    font-size: 15px;
+  }
+
+  .calendar-nav-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .calendar-body {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 8px;
+  }
+
+  .calendar-body
+  .react-calendar__month-view__weekdays__weekday {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .calendar-body
+  .react-calendar__tile {
+    height: 55px;
+    font-size: 14px;
+  }
+
+  .calendar-body
+  .react-calendar__tile.calendar-selected::before {
+    width: 35px;
+    height: 35px;
+  }
+
+  .attendance-summary {
+    padding: 20px 10px 14px;
+    border-radius: 22px;
+  }
+
+  .attendance-summary > h3 {
+    font-size: 21px;
+    margin-bottom: 18px;
+  }
+
+  .summary-grid {
+    gap: 7px;
+  }
+
+  .summary-card {
+    min-height: 80px;
+    gap: 6px;
+    padding: 10px 7px;
+    border-radius: 18px;
+  }
+
+  .summary-icon-wrapper {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    border-radius: 10px;
+  }
+
+  .summary-icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  .summary-content span {
+    font-size: 11px;
+  }
+
+  .summary-content strong {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE 375px
+========================================================= */
+
+@media (max-width: 375px) {
+  .calendar-body
+  .react-calendar__tile {
+    height: 52px;
+    font-size: 13px;
+  }
+
+  .calendar-body
+  .react-calendar__month-view__weekdays__weekday {
+    font-size: 11px;
+  }
+
+  .summary-card {
+    min-height: 76px;
+  }
+
+  .summary-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .summary-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .summary-content strong {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE 360px
+========================================================= */
+
+@media (max-width: 360px) {
+  .attendance-page {
+    padding: 10px;
+  }
+
+  .attendance-heading {
+    gap: 10px;
+  }
+
+  .attendance-back-button {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .attendance-heading-content h2 {
+    font-size: 21px;
+  }
+
+  .attendance-heading-content p {
+    font-size: 11px;
+  }
+
+  .calendar-header h3 {
+    font-size: 14px;
+  }
+
+  .calendar-body {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .calendar-body
+  .react-calendar__tile {
+    height: 50px;
+    font-size: 13px;
+  }
+
+  .attendance-summary {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .summary-grid {
+    gap: 6px;
+  }
+
+  .summary-card {
+    min-height: 72px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .summary-icon-wrapper {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .summary-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .summary-content span {
+    font-size: 10px;
+  }
+
+  .summary-content strong {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .attendance-back-button,
+  .calendar-nav-button,
+  .calendar-body .react-calendar__tile {
+    transition: none;
+  }
+}

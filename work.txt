@@ -1,0 +1,17 @@
+what next ->
+04/06/2025----
+    want to add the view attendace of any emp
+    ->for that 1. make a emp dashbord 
+               2.dynamic randring of everyemp wise 
+               3.see two option one is" view attendance " "mark attendace "
+               4. if mark attendance -> redirect to the attendance portal
+               5.if views attendance -> shows the all attendance of the as emp wise
+
+
+
+bug fix for -> location not correct and make this good for to the check env and the 125456
+
+              
+14/06/2025----
+    want to add next for update 
+    -> for that 1.
